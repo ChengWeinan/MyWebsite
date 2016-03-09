@@ -1,0 +1,27 @@
+<!-- navbar collapse -->
+<div class="app-header app-side-width {{app.settings.navbarCollapseColor}}">
+  <!-- link -->
+  <ul class="nav navbar-nav pull-right">
+    <li ng-repeat="nav in app.navbar" style="float:left;">
+	    <a ui-sref="{{nav.state}}">
+	      <span>{{nav.title}}</span> 
+	    </a>
+    </li>
+    <li>
+		<!-- search form -->
+		<form class="navbar-form navbar-form-sm navbar-left">
+		  <div class="form-group">
+		    <div class="input-group">
+		      <input type="text" ng-model="app.searchKey" class="form-control input-sm bg-light no-border rounded padder" placeholder="全站搜索">
+		      <span class="input-group-btn">
+		        <button type="submit" class="btn btn-sm bg-light rounded" ui-sref="search({keyword:app.searchKey})"><i class="fa fa-search"></i></button>
+		      </span>
+		    </div>
+		  </div>
+		</form>
+		<!-- / search form -->
+    </li>
+  </ul>
+  <!-- / link -->
+</div>
+<!-- / navbar collapse -->

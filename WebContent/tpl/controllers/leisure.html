@@ -1,0 +1,13 @@
+<div class="tech-content text-center" ng-controller="leisureCtrl">
+	<div class="col-md-10 tech-margin-center text-md" 
+		ng-repeat="article in articleList track by $index" 
+		ng-if="$index >= (currentPage-1)*perPageMaxItems && $index < currentPage*perPageMaxItems">
+		<a ui-sref="article({articleId:{{article.id}}})">
+			<div class="pull-left">{{article.title}}</div>
+			<div class="pull-right">{{dateConvent(article.date)}}</div>
+		</a>
+		<div class="line line-dashed b-b line-lg"></div>
+	</div>
+	
+    <pagination boundary-links="true" items-per-page="perPageMaxItems" total-items="totalItems" ng-model="currentPage" class="pagination-sm m-t-none m-b" previous-text="上一页" next-text="下一页" first-text="首页" last-text="尾页"></pagination>
+</div>

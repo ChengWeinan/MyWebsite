@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en" data-ng-app="app" ng-controller="AppCtrl">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="Access-Control-Allow-Origin" content="www.chengweinan.com">
+		<title>程伟男的个人网站</title>
+		<link rel="stylesheet" href="http://139.129.40.116/css/bootstrap.css" type="text/css" />
+		<link rel="stylesheet" href="http://139.129.40.116/css/font.css" type="text/css" />
+		<link rel="stylesheet" href="http://139.129.40.116/css/font-awesome.min.css" type="text/css" />
+		<link rel="stylesheet" href="http://139.129.40.116/css/simple-line-icons.css" type="text/css" />
+		<link rel="stylesheet" href="http://139.129.40.116/css/app.css" type="text/css" />
+		<link rel="stylesheet" href="http://139.129.40.116/css/main.css" type="text/css" />
+		<link rel="stylesheet" href="http://139.129.40.116/vendor/angular/angularjs-toaster/toaster.css" type="text/css" />
+		<base href="/">
+	</head>
+	<body>
+		<div id="app" class="app" ng-class="{'app-header-fixed':app.settings.headerFixed, 'app-aside-fixed':app.settings.asiderFixed, 'app-aside-folded':app.settings.asideFolded, 'app-aside-dock':app.settings.asideDock, 'container':app.settings.container}">
+			<!-- navbar -->
+			<div data-ng-include=" 'tpl/blocks/header.html' "></div>
+			<!-- / navbar -->
+
+
+			<!-- Author -->
+			<div data-ng-include=" 'tpl/blocks/author.html' "></div>
+			<!-- / Author -->
+
+
+			<!-- content -->
+			<div class="app-content">
+			  <div class="app-content-body fade-in-up" ui-view></div>
+			</div>
+			<!-- /content -->
+
+			<!-- footer -->
+			<div data-ng-include=" 'tpl/blocks/footer.html' "></div>
+			<!-- / footer -->
+
+			<!-- pop message -->
+			<toaster-container toaster-options="{'close-button': true}"></toaster-container>
+			<!-- / pop message -->
+		</div>
+		
+		<!-- jQuery -->
+		<script src="vendor/jquery/jquery.min.js"></script>
+		
+		<!-- Angular -->
+		<script src="vendor/angular/angular.js"></script>
+		<script src="vendor/angular/angular-animate/angular-animate.js"></script>
+		<script src="vendor/angular/angular-translate/angular-translate.js"></script>
+		<script src="vendor/angular/angular-translate/loader-static-files.js"></script>
+		<script src="vendor/angular/angular-translate/storage-cookie.js"></script>
+		<script src="vendor/angular/angular-translate/storage-local.js"></script>
+		<script src="vendor/angular/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+		<script src="vendor/angular/angular-ui-router/angular-ui-router.js"></script>
+		<script src="vendor/angular/ngstorage/ngStorage.js"></script>
+		<script src="vendor/angular/oclazyload/ocLazyLoad.js"></script>
+		<script src="vendor/angular/angularjs-toaster/toaster.js"></script>
+		<script src="vendor/angular/angular-sanitize/angular-sanitize.js"></script>
+		<script src="vendor/angular/angular-cookies/angular-cookies.js"></script>
+		<script src="vendor/angular/angular-resource/angular-resource.js"></script>
+		<script src="vendor/angular/angular-touch/angular-touch.js"></script>
+		
+		<!-- UEditor -->
+		<script src="vendor/ueditor/ueditor.config.js"></script>
+    	<script src="vendor/ueditor/ueditor.all.min.js"></script>
+    	<script src="vendor/ueditor/lang/zh-cn/zh-cn.js"></script>
+    	<!-- <script src="vendor/ueditor/ueditor.parse.min.js"></script> -->
+				
+		<!-- Other libs -->
+		<script src="vendor/libs/screenfull.min.js"></script>
+		
+		<!-- App -->
+		<script src="js/app.js"></script>
+		<script src="js/config.js"></script>
+		<script src="js/config.lazyload.js"></script>
+		<script src="js/config.router.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/services/ui-load.js"></script>
+		<script src="js/services/http-service.js"></script>
+		<script src="js/services/globalFunction-service.js"></script>
+		<script src="js/directives/ui-fullscreen.js"></script>
+		<script src="js/directives/ui-nav.js"></script>
+		<script src="js/directives/ui-scroll.js"></script>
+		<script src="js/directives/ui-toggleclass.js"></script>
+		<script src="js/directives/ui-jq.js"></script>
+	</body>
+</html>

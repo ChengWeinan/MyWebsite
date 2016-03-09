@@ -1,0 +1,85 @@
+<div ng-controller="articleCtrl" class="col-md-11 article-textCenter">
+	<!-- 文章标题 -->
+    <div class="font-bold text-2x" title="{{articleData.title}}">{{articleData.title}}</div> 
+    <!-- / 文章标题 -->
+    
+    <!-- 文章日期和访问量 -->
+    <div class="text-1x">
+    	<div class="article-date">{{dateConvent(articleData.date)}}</div>
+    	<div><i class="fa fa-eye fa-fw text-muted"></i>{{articleData.visits}}</div>
+    </div> 
+    <!-- / 文章日期和访问量 -->
+    
+    <!-- 文章标签 -->
+    <div>
+    	<p>
+    		<span class="label bg-black pos-rlt m-r inline wrapper-xs"><i class="arrow right arrow-black"></i> Tags:</span>
+    		<a class="m-r-sm" ng-repeat="tag in articleData.labelList.split(',')" ui-sref="search({keyword:tag})">{{tag}}</a>
+        </p>
+    </div>
+    <!-- / 文章标签 -->
+    
+    <!-- 文章分享 -->
+    <div>
+		<!-- JiaThis Button BEGIN -->
+		<script>
+			var jiathis_config={
+				ralateuid:{
+					"tsina":"2394250383"
+				},
+				shortUrl:false,
+				hideMore:false
+			}
+		</script>
+		<div class="jiathis_style"><span class="jiathis_txt">分享到：</span>
+			<a class="jiathis_button_tsina"></a>
+			<a class="jiathis_button_weixin"></a>
+			<a class="jiathis_button_cqq"></a>
+			<a class="jiathis_button_douban"></a>
+			<a class="jiathis_button_fb"></a>
+			<a class="jiathis_button_twitter"></a>
+			<a class="jiathis_button_linkedin"></a>
+			<a class="jiathis_button_googleplus"></a>
+			<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+			<a class="jiathis_counter_style"></a>
+		</div>
+		<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+		<!-- JiaThis Button END -->
+    </div>
+    <!-- / 文章分享 -->
+    
+    <!-- 文章正文 -->
+    <div class="line line-dashed b-b line-lg"></div>
+  	<div class="article-overflow ng-binding" ng-bind-html="trustAsHtml(articleData.content)"></div>
+  	<div style="display:float;">
+  		<div ng-if="postArticleInfo.hasMore" class="pull-left">后一篇：<a ui-sref="article({articleId:{{postArticleInfo.id}}})" title="{{postArticleInfo.titleOrg}}">{{postArticleInfo.title}}</a></div>
+  		<div ng-if="preArticleInfo.hasMore" class="pull-right">前一篇：<a ui-sref="article({articleId:{{preArticleInfo.id}}})" title="{{preArticleInfo.titleOrg}}">{{preArticleInfo.title}}</a></div>
+  	</div>
+  	<div class="line line-dashed b-b line-lg"></div>
+  	<!-- / 文章正文 -->
+	
+	<!-- 文章评论:disqus -->
+	<div id="disqus_thread"></div>
+	<script>
+		/**
+		 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+		 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+		 */
+		/*
+		var disqus_config = function () {
+			this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+			this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+		};
+		*/
+		(function() {  // DON'T EDIT BELOW THIS LINE
+			var d = document, s = d.createElement('script');
+			
+			s.src = '//chengweinan.disqus.com/embed.js';
+			
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+		})();
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  	<!-- / 文章评论:disqus -->
+</div>

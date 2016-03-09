@@ -1,0 +1,31 @@
+<div ng-controller="searchCtrl">
+	<div class="wrapper-md">
+	  <form class="m-b-md">
+	    <div class="input-group">
+	      <input type="text" class="form-control input-lg" placeholder="全站搜索" ng-model="keyword">
+	      <span class="input-group-btn">
+	        <button type="submit" class="btn btn-lg btn-default" ui-sref="search({keyword:keyword})">
+	        	<i class="icon-magnifier"></i>
+	        </button>
+	      </span>
+	    </div>
+	  </form>
+	  <div ng-show="showResult">
+		<p class="m-b-md">找到 <strong>{{resultTotalCount}}</strong> 个搜索结果： <strong>{{keywordStatic}}</strong></p>
+		<tabset class="tab-container">
+		  <tab ng-repeat="(key, result) in searchResult">
+		    <tab-heading>
+		     	{{result.categoryName}} <span class="badge badge-sm m-l-xs">{{result.count}}</span>
+		    </tab-heading>
+		    <ul class="list-group no-borders pull-in m-b-none">
+		      <li class="list-group-item" ng-repeat="article in result.data">
+		        <a class="h4 text-primary m-b-sm m-t-sm block" ui-sref="article({articleId:{{article.id}}})">{{article.title}}</a>
+		        <p>{{article.abstractTxt}}</p>
+		        <div class="line line-dashed b-b line-lg"></div>
+		      </li>
+		    </ul>
+		  </tab>
+		</tabset>
+	  </div>
+	</div>
+</div>

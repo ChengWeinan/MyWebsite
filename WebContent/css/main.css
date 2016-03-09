@@ -1,0 +1,274 @@
+/*app*/
+.app-header, .navbar-collapse, .app-content, .app-footer {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navbar-nav{
+	float: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.thumb-xxl {
+  display: inline-block;
+  width: 150px;
+}
+
+.text-1x {
+  font-size: 1em;
+}
+
+.author-bg-img {
+	/*background-image: url('../img/bg1.jpg');*/
+	background-color: #222;
+}
+
+.color-white {
+	color: #eee;
+}
+
+.app-footer {
+	position: fixed;
+	background-color: #fff;
+}
+
+.fa-color {
+	color: #888;
+}
+
+.fa-color:hover,
+.fa-color:focus,
+.fa-color:active,
+.fa-color.active  {
+	color: #fff;
+}
+
+.app-content-body {
+  background-color: #fff;
+  min-height: 600px;
+}
+
+.arrow.left:after {
+  border-right-color: #edf1f2;
+}
+
+.app.container,
+.app.container .app-header,
+.app-header-fixed .app-header,
+.app-footer {
+	width: 86%;
+	max-width: 1600px;
+}
+
+
+
+/*bootstrap*/
+.collapse {
+  display: block;
+  visibility: visible;
+}
+
+
+
+/*global*/
+.cursor-pointer{
+	cursor: pointer;
+}
+
+.app-side-width {
+    left: 7%;
+    right: 7%;
+}
+
+
+
+/*home*/
+.home-textCenter{
+	margin: 20px 10%;
+}
+
+.home-btn {
+	border-radius: 2px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    display: inline-block;
+    padding: 6px 20px;
+    text-align: center;
+    vertical-align: middle;
+    color: #ffffff !important;
+    cursor: pointer;
+}
+
+.home-color:hover,
+.home-color:focus,
+.home-color:active,
+.home-color.active {
+	background-color: #888;
+	border-color: #888;
+}
+
+.home-color {
+	background-color: #666;
+	border-color: #666;
+}
+
+.tl-item .tl-wrap {
+	border-color: #aaa;
+}
+
+.tl-content .panel-body {
+    padding: 5px 15px 0 15px;
+}
+
+/*loading图样式-开始*/
+.spinner {
+  margin: 10px 46px;
+  width: 20px;
+  height: 20px;
+  position: relative;
+}
+ 
+.container1 > div, .container2 > div, .container3 > div {
+  width: 6px;
+  height: 6px;
+  background-color: #fff;
+ 
+  border-radius: 100%;
+  position: absolute;
+  -webkit-animation: bouncedelay 1.2s infinite ease-in-out;
+  animation: bouncedelay 1.2s infinite ease-in-out;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+ 
+.spinner .spinner-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+ 
+.container2 {
+  -webkit-transform: rotateZ(45deg);
+  transform: rotateZ(45deg);
+}
+ 
+.container3 {
+  -webkit-transform: rotateZ(90deg);
+  transform: rotateZ(90deg);
+}
+ 
+.circle1 { top: 0; left: 0; }
+.circle2 { top: 0; right: 0; }
+.circle3 { right: 0; bottom: 0; }
+.circle4 { left: 0; bottom: 0; }
+ 
+.container2 .circle1 {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+}
+ 
+.container3 .circle1 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+ 
+.container1 .circle2 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+ 
+.container2 .circle2 {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+ 
+.container3 .circle2 {
+  -webkit-animation-delay: -0.7s;
+  animation-delay: -0.7s;
+}
+ 
+.container1 .circle3 {
+  -webkit-animation-delay: -0.6s;
+  animation-delay: -0.6s;
+}
+ 
+.container2 .circle3 {
+  -webkit-animation-delay: -0.5s;
+  animation-delay: -0.5s;
+}
+ 
+.container3 .circle3 {
+  -webkit-animation-delay: -0.4s;
+  animation-delay: -0.4s;
+}
+ 
+.container1 .circle4 {
+  -webkit-animation-delay: -0.3s;
+  animation-delay: -0.3s;
+}
+ 
+.container2 .circle4 {
+  -webkit-animation-delay: -0.2s;
+  animation-delay: -0.2s;
+}
+ 
+.container3 .circle4 {
+  -webkit-animation-delay: -0.1s;
+  animation-delay: -0.1s;
+}
+ 
+@-webkit-keyframes bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0.0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+ 
+@keyframes bouncedelay {
+  0%, 80%, 100% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 40% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+/*loading图样式-结束*/
+
+
+
+/*article*/
+.article-textCenter {
+	margin: 20px 0 20px 4%;
+}
+
+.article-overflow {
+	overflow: hidden;
+}
+
+.article-date {
+	float: left;
+	margin-right: 20px;
+}
+
+
+
+/*tech*/
+.tech-margin-center {
+	float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tech-margin-center:hover,
+.tech-margin-center:focus,
+.tech-margin-center:active,
+.tech-margin-center.active {
+	background-color: #edf1f2;
+} 
+
+.tech-content {
+	margin: 30px 0;
+}
+
+
+

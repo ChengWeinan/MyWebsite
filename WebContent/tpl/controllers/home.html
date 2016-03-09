@@ -1,0 +1,71 @@
+<div ng-controller="homeCtrl" class="home-textCenter">
+  <!-- .col -->
+  <div class="col">
+    <div class="wrapper">
+      <ul class="timeline">
+        <li class="tl-header">
+          <div ng-hide="isLoading" class="btn home-btn home-color text-2x" ng-click="refreshStatusList();">最新动态</div>
+          <div ng-show="isLoading" class="btn home-btn home-color text-2x" ng-click="refreshStatusList();">
+            <div class="spinner">
+			  <div class="spinner-container container1">
+			    <div class="circle1"></div>
+			    <div class="circle2"></div>
+			    <div class="circle3"></div>
+			    <div class="circle4"></div>
+			  </div>
+			  <div class="spinner-container container2">
+			    <div class="circle1"></div>
+			    <div class="circle2"></div>
+			    <div class="circle3"></div>
+			    <div class="circle4"></div>
+			  </div>
+			  <div class="spinner-container container3">
+			    <div class="circle1"></div>
+			    <div class="circle2"></div>
+			    <div class="circle3"></div>
+			    <div class="circle4"></div>
+			  </div>
+			</div>
+          </div>
+        </li>
+
+        <li class="tl-item tl-left" ng-repeat="status in statusList">
+          <div class="tl-wrap b-primary">
+            <span class="tl-date">{{dateConvent(status.date)}}</span>
+            <div class="tl-content panel padder b-a bg-light">
+              <span class="arrow left pull-up hidden-left"></span>
+              <span class="arrow right pull-up visible-left"></span>
+              <div class="text-lt m-b-sm">
+           		  <!--
+           		  <a href class="avatar thumb-xs m-r-xs">
+                    <img src="img/avatar1.png" alt="{{status.author}}" title="{{status.author}}">
+                    <i class="on b-white left"></i>
+                  </a>
+                  -->
+                  <div ng-switch="status.category">
+				    <div ng-switch-when="1">
+				        <a ui-sref="tech"><i class="fa fa-suitcase"></i>工作</a>
+				    </div>
+				    <div ng-switch-when="2">
+				        <a ui-sref="leisure"><i class="fa fa-home"></i>生活</a>
+				    </div>
+				  </div> 
+                  <a ui-sref="article({articleId:{{status.id}}})">{{status.title}}</a>
+		      </div>
+              <div class="panel-body pull-in b-t">
+              	<a ui-sref="article({articleId:{{status.id}}})">
+                	<p>{{status.abstractTxt}}</p>
+                </a>
+              </div>             
+            </div>
+          </div>
+        </li>
+        <li class="tl-header">
+          <div class="btn btn-sm btn-default btn-rounded" ng-click="showMore();" ng-show="statusTotalCount > itemsStartIndex">{{showMoreButtonContent}}</div>
+          <div class="btn btn-sm btn-default btn-rounded disabled" ng-hide="statusTotalCount > itemsStartIndex">end</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- /.col -->
+</div>

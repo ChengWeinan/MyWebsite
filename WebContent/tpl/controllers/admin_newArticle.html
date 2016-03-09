@@ -1,0 +1,57 @@
+<div ng-controller="adminNewArticleCtrl">
+	<div class="row">
+	  <div class="col-sm-11 m-l-xxl m-r-xxl">
+	    <form name="formValidate" class="form-horizontal form-validation">
+	      <div class="panel panel-default">
+	        <div class="panel-heading">
+	          <strong>新文章</strong>
+	        </div>
+	        <div class="panel-body">                    
+	          <div class="form-group">
+	            <label class="col-sm-2 control-label">标题</label>
+	            <div class="col-sm-9">
+	              <input type="text" class="form-control" placeholder="请输入文章标题" ng-model="submitContent.title" required >
+	            </div>
+	          </div>
+	          <div class="line line-dashed b-b line-lg pull-in"></div>
+	          <div class="form-group">
+	            <label class="col-sm-2 control-label">分类</label>
+	            <div class="col-sm-2">
+	       	      <select class="form-control" ng-model="submitContent.articleCategory" 
+	       	      		  ng-options="category.id as category.name for category in articleCategoryList">
+	              </select>
+	            </div>
+	       	    <label class="col-sm-1 control-label">标签</label>
+	            <div class="col-sm-2">
+		            <div class="input-group">
+		              <input type="text" class="form-control" ng-model="currentLabel">
+		              <span class="input-group-btn">
+		                <button class="btn btn-default bold" type="button" ng-click="addLabel();"><b>+</b></button>
+		              </span>
+		            </div>
+	            </div>
+	            <div class="col-sm-4">
+	            	<div ng-repeat="label in submitContent.labelList" style="float: left; margin:0 5px 0 0; padding: 6px 0;">
+	            		<span class="label bg-black text-base">
+	            			{{label}}
+	            			<a ng-click="deleteLabel($index)" class="fa fa-times"></a>
+	            		</span>
+	           		</div>
+	            </div>
+	          </div>
+	    	      <div class="line line-dashed b-b line-lg pull-in"></div>
+	          <div class="form-group">
+	            <div class="col-sm-12">
+	            	<!-- 在线编辑器UEditor容器 -->
+             		<div id="newArticleContainer" name="content" type="text/plain"></div>
+	            </div>
+	          </div>
+	        </div>
+	        <footer class="panel-footer text-right bg-light lter">
+	          <button type="submit" class="btn btn-black" ng-click="submitNewArticle();">提交</button>
+	        </footer>
+	      </div>
+	    </form>
+	  </div>
+	</div>
+</div>

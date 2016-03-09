@@ -1,0 +1,23 @@
+<!-- navbar -->
+<div data-ng-include=" 'tpl/blocks/header.html' " class="app-header navbar"></div>
+<!-- / navbar -->
+
+
+<!-- Author -->
+<div data-ng-include=" 'tpl/blocks/author.html' "></div>
+<!-- / Author -->
+
+
+<!-- content -->
+<div class="app-content">
+  <div class="app-content-body fade-in-up" ui-view></div>
+</div>
+<!-- /content -->
+
+<!-- footer -->
+<div data-ng-include=" 'tpl/blocks/footer.html' "></div>
+<!-- / footer -->
+
+<!-- pop message -->
+<toaster-container toaster-options="{'close-button': true}"></toaster-container>
+<!-- / pop message -->
